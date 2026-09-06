@@ -1,0 +1,207 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.rsvp {
+    width: 100%;
+    .content {
+        width: 100%;
+        perspective: 1000px;
+        position: relative;
+        padding-bottom: 8%;
+
+        .rsvp-form {
+            display: block;
+            padding: 0 8%;
+            .header {
+                .title {
+                    margin-bottom: 5%;
+                    font-family: $font-DK-Cool-Crayonr;
+                    font-size: 39px;
+                    color: #646531ff;
+                }
+
+                .subtitle {
+                    font-size: 12px;
+                    line-height: 1.5;
+                    margin-bottom: 3%;
+                    color: #503b28ff;
+                }
+            }
+
+            .button-group {
+                display: grid;
+                grid-template-columns: auto auto;
+                gap: 8%;
+                margin-bottom: 2%;
+
+                .radio-wrapper {
+                    position: relative;
+                }
+
+                .radio-wrapper input[type="radio"] {
+                    position: absolute;
+                    opacity: 0;
+                    cursor: pointer;
+                }
+
+                .radio-label {
+                    @include flex-center;
+                    text-transform: uppercase;
+                    padding: 5% 0;
+                    height: 100%;
+                    line-height: 1;
+                    border-radius: 10px;
+                    background: $secondary-color;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    text-align: center;
+                    border: none;
+
+                    &:hover {
+                        background: $title-color;
+                        color: white;
+                    }
+                }
+
+                .radio-wrapper input[type="radio"]:checked+.radio-label {
+                    background: $title-color;
+                    color: white;
+                }
+            }
+
+            .form-group {
+                margin-bottom: 4%;
+                position: relative;
+                font-size: 10px;
+
+                input[type="text"],
+                input[type="number"],
+                textarea {
+                    font-family: inherit;
+                    width: 100%;
+                    padding: 2% 4%;
+                    border-radius: 10px;
+                    background: transparent;
+                    outline: none;
+                    border: none;
+                    line-height: 1;
+                    transition: border-color 0.3s ease;
+                    color: $text-color;
+                    background-color: $secondary-color;
+                    font-size: 12px;
+                }
+
+                input[type="text"]:focus,
+                input[type="number"]:focus,
+                textarea:focus {
+                    outline: none;
+                }
+
+                input[type="text"]::placeholder,
+                textarea::placeholder {
+                    color: #939292ff;
+                }
+
+                textarea#message {
+                    aspect-ratio: 8 / 2;
+                    resize: vertical;
+                    padding: 2% 4%;
+                    border-radius: 15px;
+                }
+
+                textarea::placeholder {
+                    white-space: pre-line;
+                    /* Cho phép hiển thị xuống dòng trong placeholder */
+                }
+
+                .subtitle {
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    margin-bottom: 3%;
+                }
+
+                .flower1 {
+                    max-width: 82px;
+                    width: 100%;
+                    height: auto;
+                    position: absolute;
+                    right: -5%;
+                    bottom: 0;
+                }
+
+                &.guest-number {
+                    display: flex;
+                    gap: 2%;
+                    .label {
+                        display: block;
+                        @include flex-center;
+                        width: 35%;
+                        text-transform: uppercase;
+                    }
+                    input {
+                        width: 63%;
+                    }
+                }
+            }
+
+            .submit-btn {
+                width: 28%;
+                padding: 2%;
+                line-height: 1;
+                background: $title-color;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                font-weight: 600;
+                font-size: 10px;
+                cursor: pointer;
+                text-transform: uppercase;
+                transition: background 0.3s ease;
+                margin: 1% 0 6%;
+                font-family: $font-gilroy;
+            }
+    
+            .submit-btn:hover {
+                background: rgb(41, 51, 36);
+                opacity: 0.9;
+            }
+    
+            .submit-btn:active {
+                transform: scale(0.98);
+            }
+        }
+    }
+
+    @media (max-width: 500px) {
+        .content {
+            .rsvp-form {
+                .header {
+                    .title {
+                        font-size: calc((39 / 500) * 100vw);
+                    }
+    
+                    .subtitle {
+                        font-size: calc((12 / 500) * 100vw);
+                    }
+                }
+    
+                .form-group {
+                    font-size: calc((10 / 500) * 100vw);
+                    input[type="text"],
+                    input[type="number"],
+                    textarea {
+                        font-size: calc((12 / 500) * 100vw);
+                    }
+    
+                    .subtitle {
+                        font-size: calc((12 / 500) * 100vw);
+                    }
+                }
+    
+                .submit-btn {
+                    font-size: calc((10 / 500) * 100vw);
+                }
+            }
+        }
+    }
+}

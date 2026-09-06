@@ -1,0 +1,129 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+
+.pictures {
+    width: 100%;
+    margin-bottom: 15%;
+
+    .content {
+        width: 100%;
+        position: relative;
+        aspect-ratio: 500 / 710;
+
+        .picture {
+            position: absolute;
+            width: 100%;
+        }
+
+        .flower {
+            max-width: 80px;
+            width: 100%;
+            height: auto;
+            position: absolute;
+        }
+
+        .flower_left {
+            top: 27%;
+            left: 10%;
+            z-index: 8;
+        }
+
+        .flower_right {
+            top: 36%;
+            left: 43%;
+            z-index: 5;
+        }
+
+        .flower_pic04 {
+            max-width: 91px;
+            width: 100%;
+            height: auto;
+            position: absolute;
+            bottom: 3%;
+            left: 41%;
+            z-index: 7;
+        }
+
+        .picture01 {
+            max-width: 198px;
+            aspect-ratio: 198 / 262;
+            background: url('../../assets/images/picture01.png') no-repeat center / cover;
+            top: 12%;
+            left: 15%;
+        }
+
+        .picture02 {
+            max-width: 217px;
+            aspect-ratio: 217 / 274;
+            background: url('../../assets/images/picture02.png') no-repeat center / cover;
+            top: 20%;
+            left: 46%;
+            z-index: 4;
+        }
+
+        .picture03 {
+            max-width: 188px;
+            aspect-ratio: 188 / 256;
+            background: url('../../assets/images/picture03.png') no-repeat center / cover;
+            top: 41%;
+            left: 30%;
+            z-index: 6;
+        }
+
+        .picture04 {
+            max-width: 234px;
+            aspect-ratio: 234 / 284;
+            background: url('../../assets/images/picture04.png') no-repeat center / cover;
+            top: 64%;
+            left: 8%;
+            z-index: 7;
+        }
+
+        .picture05 {
+            max-width: 249px;
+            aspect-ratio: 249 / 291;
+            background: url('../../assets/images/picture05.png') no-repeat center / cover;
+            top: 61%;
+            left: 45%;
+        }
+
+        @media (max-width: 500px) {
+            .flower {
+                max-width: calc((80 / 500) * 100vw);
+            }
+
+            .flower_pic04 {
+                max-width: calc((91 / 500) * 100vw);
+            }
+
+            .picture01 {
+                max-width: calc((198 / 500) * 100vw);
+
+                .flower {
+                    max-width: calc((80 / 500) * 100vw);
+                }
+            }
+
+            .picture02 {
+                max-width: calc((217 / 500) * 100vw);
+            }
+
+            .picture03 {
+                max-width: calc((188 / 500) * 100vw);
+            }
+
+            .picture04 {
+                max-width: calc((234 / 500) * 100vw);
+
+                .flower_pic04 {
+                    max-width: calc((91 / 500) * 100vw);
+                }
+            }
+
+            .picture05 {
+                max-width: calc((249 / 500) * 100vw);
+            }
+        }
+    }
+}

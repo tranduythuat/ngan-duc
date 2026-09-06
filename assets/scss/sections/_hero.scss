@@ -1,0 +1,92 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.hero {
+    width: 100%;
+
+    .content {
+        width: 100%;
+        aspect-ratio: 500 / 730;
+        // background:
+        //     url('../../assets/images/IMG_5293.GIF') no-repeat 52% 63% / 164%,
+        //     url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/cuong-trang/hero.webp') no-repeat center / cover;
+        background-color: $title-color;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+
+        .logo {
+            perspective: 500px;
+            margin-top: 8%;
+
+            img {
+                max-width: 36px;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        // .couple-name {
+        //     margin-bottom: 70%;
+        //     img {
+        //         max-width: 400px;
+        //         width: 100%;
+        //         height: auto;
+        //     }
+        // }
+        .date {
+            color: white;
+            margin-bottom: 8%;
+
+            .time {
+                font-size: 16px;
+            }
+
+            .divider {
+                margin: 1% 0 3%;
+
+                img {
+                    max-width: 6.5px;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .text {
+                font-family: $font-DK-Cool-Crayonr;
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .logo {
+                img {
+                    max-width: calc((36 / 500) * 100vw);
+                }
+            }
+
+            .couple-name {
+                img {
+                    max-width: calc((400 / 500) * 100vw);
+                }
+            }
+
+            .date {
+                .time {
+                    font-size: calc((16 / 500) * 100vw);
+                }
+
+                .divider {
+                    img {
+                        max-width: calc((6.5 / 500) * 100vw);
+                    }
+                }
+
+                .text {
+                    font-size: calc((13 / 500) * 100vw);
+                }
+            }
+        }
+    }
+}
