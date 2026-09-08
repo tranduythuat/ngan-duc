@@ -17,6 +17,29 @@
             margin-bottom: 2%;
         }
 
+        .couple-intro {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10%;
+            margin: 10% 0;
+
+            .img-box {
+                max-width: 180px;
+                width: 100%;
+                aspect-ratio: 5 / 8;
+                border-radius: 5px;
+
+                &.bride {
+                    background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/ngan-duc/bride.webp') no-repeat 50% 50% / cover;
+                }
+
+                &.groom {
+                    background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/ngan-duc/husband.webp') no-repeat 50% 50% / cover;
+                }
+            }
+        }
+
         .couple-name {
             font-family: $font-DK-Cool-Crayonr;
             color: #646531ff;
@@ -101,6 +124,12 @@
 
             .welcome {
                 font-size: calc((13.5 / 500) * 100vw);
+            }
+
+            .couple-intro {
+                .img-box {
+                    max-width: calc((180 / 500) * 100vw);
+                }
             }
 
             .couple-name {

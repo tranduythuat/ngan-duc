@@ -344,6 +344,25 @@ section {
   color: #503b28;
   margin-bottom: 2%;
 }
+.invite .content .couple-intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+  margin: 10% 0;
+}
+.invite .content .couple-intro .img-box {
+  max-width: 180px;
+  width: 100%;
+  aspect-ratio: 5/8;
+  border-radius: 5px;
+}
+.invite .content .couple-intro .img-box.bride {
+  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/ngan-duc/bride.webp") no-repeat 50% 50%/cover;
+}
+.invite .content .couple-intro .img-box.groom {
+  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/ngan-duc/husband.webp") no-repeat 50% 50%/cover;
+}
 .invite .content .couple-name {
   font-family: "1FTV-VIP-DK-Cool-Crayon", sans-serif;
   color: #646531;
@@ -415,6 +434,9 @@ section {
   }
   .invite .content .welcome {
     font-size: 2.7vw;
+  }
+  .invite .content .couple-intro .img-box {
+    max-width: 36vw;
   }
   .invite .content .couple-name {
     font-size: 9.2vw;
@@ -899,6 +921,90 @@ section {
   }
   .rsvp .content .rsvp-form .submit-btn {
     font-size: 2vw;
+  }
+}
+
+.end {
+  width: 100%;
+}
+.end .content {
+  width: 100%;
+}
+.end .content .countdown {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 5% 0 10%;
+}
+.end .content .countdown .divider img {
+  width: 32px;
+  height: auto;
+  margin-bottom: 5%;
+}
+.end .content .countdown .title {
+  font-size: 40px;
+  font-family: "1FTV-VIP-DK-Cool-Crayon", sans-serif;
+  line-height: 1;
+  margin-bottom: 1%;
+  color: #646531;
+}
+.end .content .countdown .sub_text {
+  margin: 2% 0 5%;
+  letter-spacing: 1.4px;
+  color: #503b28;
+  font-size: 12px;
+}
+.end .content .countdown .countdown-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+  width: 85%;
+  gap: 3%;
+}
+.end .content .countdown .countdown-box .time-box {
+  text-align: center;
+  flex: 1;
+  background: rgba(217, 215, 195, 0.5);
+  border: 1px solid #646531;
+  backdrop-filter: blur(1px);
+  color: #646531;
+  padding: 2% 0;
+  border-radius: 10px;
+  position: relative;
+}
+.end .content .countdown .countdown-box .time-box .number {
+  font-size: 32px;
+  font-weight: 100;
+  line-height: 1;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 1;
+  position: relative;
+}
+.end .content .countdown .countdown-box .time-box .label {
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  z-index: 1;
+  position: relative;
+}
+@media (max-width: 500px) {
+  .end .content .countdown .title {
+    font-size: 8vw;
+  }
+  .end .content .countdown .sub_text {
+    font-size: 2.4vw;
+  }
+  .end .content .countdown .countdown-box .time-box .number {
+    font-size: 6.4vw;
+  }
+  .end .content .countdown .countdown-box .time-box .label {
+    font-size: 2.1vw;
+    letter-spacing: 0.2vw;
   }
 }
 
