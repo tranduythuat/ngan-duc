@@ -81,7 +81,7 @@ section {
 
 .container {
   max-width: 500px;
-  background: url("../../assets/images/IMG_3962.GIF") no-repeat 50% 99.5%/contain, url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/cuong-trang/base_bg.webp") no-repeat 50% 100%/120%;
+  background: url("../../assets/images/IMG_3962.GIF") no-repeat 50% 99.5%/contain, url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/cuong-trang/base_bg.webp") no-repeat center/cover;
   width: 100%;
   height: 100%;
   position: relative;
@@ -277,6 +277,7 @@ section {
 .hero .content {
   width: 100%;
   aspect-ratio: 500/730;
+  background: url("../../assets/images/IMG_6205.GIF") no-repeat 50% 63%/150%, url("../../assets/images/hero.jpg") no-repeat center/cover;
   background-color: #646531;
   display: flex;
   justify-content: space-between;
@@ -291,6 +292,25 @@ section {
   max-width: 36px;
   width: 100%;
   height: auto;
+}
+.hero .content .couple-name {
+  margin-bottom: 60%;
+  font-family: "1FTV-VIP-DK-Cool-Crayon", sans-serif;
+  font-size: 52px;
+  color: #f5edda;
+  transform: rotate(-5deg);
+}
+.hero .content .couple-name span {
+  display: block;
+}
+.hero .content .couple-name span.husband {
+  text-align: left;
+  position: relative;
+  left: -10%;
+  margin-bottom: 5%;
+}
+.hero .content .couple-name span.wife {
+  text-align: right;
 }
 .hero .content .date {
   color: white;
@@ -315,8 +335,8 @@ section {
   .hero .content .logo img {
     max-width: 7.2vw;
   }
-  .hero .content .couple-name img {
-    max-width: 80vw;
+  .hero .content .couple-name {
+    font-size: 10.4vw;
   }
   .hero .content .date .time {
     font-size: 3.2vw;
@@ -366,20 +386,19 @@ section {
 .invite .content .couple-name {
   font-family: "1FTV-VIP-DK-Cool-Crayon", sans-serif;
   color: #646531;
-  font-size: 46px;
+  font-size: 40px;
   margin-bottom: 5%;
 }
 .invite .content .couple-image {
   perspective: 1000px;
   margin-bottom: 16%;
   position: relative;
-  max-width: 362px;
-  aspect-ratio: 362/200;
-  background-color: #d9d7c3;
+  left: -5%;
   margin: 0 auto;
   margin-bottom: 16%;
 }
 .invite .content .couple-image img {
+  max-width: 398px;
   width: 100%;
   height: auto;
 }
@@ -398,10 +417,7 @@ section {
   color: #503b28;
 }
 .invite .content .map-img {
-  aspect-ratio: 408/200;
-  max-width: 408px;
-  background-color: #d9d7c3;
-  margin: 5% auto;
+  margin: -5% auto;
 }
 .invite .content .map-img img {
   max-width: 408px;
@@ -439,7 +455,7 @@ section {
     max-width: 36vw;
   }
   .invite .content .couple-name {
-    font-size: 9.2vw;
+    font-size: 8vw;
   }
   .invite .content .couple-image img {
     max-width: 72.4vw;
@@ -762,16 +778,27 @@ section {
   padding: 0 8%;
 }
 .rsvp .content .rsvp-form .header .title {
-  margin-bottom: 5%;
   font-family: "1FTV-VIP-DK-Cool-Crayon", sans-serif;
   font-size: 39px;
   color: #646531;
 }
+.rsvp .content .rsvp-form .header .en-title {
+  display: block;
+  font-size: 18px;
+  color: #503b28;
+  margin-bottom: 5%;
+}
 .rsvp .content .rsvp-form .header .subtitle {
   font-size: 12px;
   line-height: 1.5;
-  margin-bottom: 3%;
   color: #503b28;
+}
+.rsvp .content .rsvp-form .header .en-subtitle {
+  display: block;
+  font-size: 11px;
+  color: #503b28;
+  margin-bottom: 3%;
+  text-transform: uppercase;
 }
 .rsvp .content .rsvp-form .button-group {
   display: grid;
@@ -792,7 +819,7 @@ section {
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-  padding: 5% 0;
+  padding: 5% 0 2%;
   height: 100%;
   line-height: 1;
   border-radius: 10px;
@@ -801,10 +828,15 @@ section {
   transition: all 0.3s ease;
   text-align: center;
   border: none;
+  display: block;
 }
 .rsvp .content .rsvp-form .button-group .radio-label:hover {
   background: #646531;
   color: white;
+}
+.rsvp .content .rsvp-form .button-group .radio-label i {
+  display: block;
+  line-height: 2;
 }
 .rsvp .content .rsvp-form .button-group .radio-wrapper input[type=radio]:checked + .radio-label {
   background: #646531;
@@ -872,16 +904,21 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   width: 35%;
   text-transform: uppercase;
+}
+.rsvp .content .rsvp-form .form-group.guest-number .label i {
+  display: block;
+  line-height: 1.5;
 }
 .rsvp .content .rsvp-form .form-group.guest-number input {
   width: 63%;
 }
 .rsvp .content .rsvp-form .submit-btn {
   width: 28%;
-  padding: 2%;
-  line-height: 1;
+  padding: 2% 0 1%;
+  line-height: 1.3;
   background: #646531;
   color: white;
   border: none;
@@ -905,8 +942,14 @@ section {
   .rsvp .content .rsvp-form .header .title {
     font-size: 7.8vw;
   }
+  .rsvp .content .rsvp-form .header .en-title {
+    font-size: 3.6vw;
+  }
   .rsvp .content .rsvp-form .header .subtitle {
     font-size: 2.4vw;
+  }
+  .rsvp .content .rsvp-form .header .en-subtitle {
+    font-size: 2.2vw;
   }
   .rsvp .content .rsvp-form .form-group {
     font-size: 2vw;
@@ -950,9 +993,19 @@ section {
   margin-bottom: 1%;
   color: #646531;
 }
+.end .content .countdown .en-title {
+  font-size: 18px;
+  color: #503b28;
+  margin-bottom: 5%;
+}
 .end .content .countdown .sub_text {
-  margin: 2% 0 5%;
-  letter-spacing: 1.4px;
+  letter-spacing: 1.2px;
+  color: #503b28;
+  font-size: 12px;
+}
+.end .content .countdown .en-sub_text {
+  margin: 1% 0 5%;
+  letter-spacing: 1.2px;
   color: #503b28;
   font-size: 12px;
 }
@@ -996,8 +1049,13 @@ section {
   .end .content .countdown .title {
     font-size: 8vw;
   }
-  .end .content .countdown .sub_text {
+  .end .content .countdown .en-title {
+    font-size: 3.6vw;
+  }
+  .end .content .countdown .sub_text,
+  .end .content .countdown .en-sub_text {
     font-size: 2.4vw;
+    letter-spacing: 0.24vw;
   }
   .end .content .countdown .countdown-box .time-box .number {
     font-size: 6.4vw;

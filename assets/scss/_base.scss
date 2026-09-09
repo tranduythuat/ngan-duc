@@ -28,7 +28,7 @@ section {
 .container {
     max-width: 500px;
     background: url('../../assets/images/IMG_3962.GIF') no-repeat 50% 99.5% / contain,
-                url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/cuong-trang/base_bg.webp') no-repeat 50% 100% / 120%;
+        url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/cuong-trang/base_bg.webp') no-repeat center / cover;
     width: 100%;
     height: 100%;
     position: relative;
@@ -57,7 +57,8 @@ section {
         width: 190%;
         height: 100%;
         overflow: hidden;
-        .musicLabel{
+
+        .musicLabel {
             width: 100%;
             text-align: left;
             font-size: 12px;
@@ -69,6 +70,7 @@ section {
             opacity: .9;
         }
     }
+
     .player {
         max-width: 55px;
         width: 105%;
@@ -77,6 +79,7 @@ section {
         @include flex-center;
     }
 }
+
 // .player {
 //     position: fixed;
 //     bottom: 10px;
@@ -103,14 +106,18 @@ section {
     .container {
         font-size: calc((11 / 500) * 100vw);
     }
+
     .music-box {
         bottom: calc((10 / 500) * 100vw);
+
         .label {
             max-width: calc((300 / 500) * 100vw);
+
             .musicLabel {
                 font-size: calc((12 / 500) * 100vw);
             }
         }
+
         .player {
             max-width: calc((55 / 500) * 100vw);
         }
@@ -124,9 +131,10 @@ section {
 /* Định nghĩa hoạt ảnh xoay */
 @keyframes spin {
     0% {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
+
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }

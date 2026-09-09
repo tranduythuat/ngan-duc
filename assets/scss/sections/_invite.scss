@@ -43,7 +43,7 @@
         .couple-name {
             font-family: $font-DK-Cool-Crayonr;
             color: #646531ff;
-            font-size: 46px;
+            font-size: 40px;
             margin-bottom: 5%;
         }
 
@@ -51,14 +51,13 @@
             perspective: 1000px;
             margin-bottom: 16%;
             position: relative;
-            // left: -5%;
-            max-width: 362px;
-            aspect-ratio: 362 / 200;
-            background-color: $secondary-color;
+            left: -5%;
+            // background-color: $secondary-color;
             margin: 0 auto;
             margin-bottom: 16%;
 
             img {
+                max-width: 398px;
                 width: 100%;
                 height: auto;
             }
@@ -82,12 +81,8 @@
         }
 
         .map-img {
-            // position: relative;
-            // left: -4%;
-            aspect-ratio: 408 / 200;
-            max-width: 408px;
-            background-color: $secondary-color;
-            margin: 5% auto;
+            // background-color: $secondary-color;
+            margin: -5% auto;
 
             img {
                 max-width: 408px;
@@ -133,7 +128,7 @@
             }
 
             .couple-name {
-                font-size: calc((46 / 500) * 100vw);
+                font-size: calc((40 / 500) * 100vw);
             }
 
             .couple-image {

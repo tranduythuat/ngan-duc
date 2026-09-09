@@ -3,6 +3,7 @@
 
 .rsvp {
     width: 100%;
+
     .content {
         width: 100%;
         perspective: 1000px;
@@ -12,19 +13,34 @@
         .rsvp-form {
             display: block;
             padding: 0 8%;
+
             .header {
                 .title {
-                    margin-bottom: 5%;
+                    // margin-bottom: 5%;
                     font-family: $font-DK-Cool-Crayonr;
                     font-size: 39px;
                     color: #646531ff;
                 }
 
+                .en-title {
+                    display: block;
+                    font-size: 18px;
+                    color: #503b28ff;
+                    margin-bottom: 5%;
+                }
+
                 .subtitle {
                     font-size: 12px;
                     line-height: 1.5;
-                    margin-bottom: 3%;
                     color: #503b28ff;
+                }
+
+                .en-subtitle {
+                    display: block;
+                    font-size: 11px;
+                    color: #503b28ff;
+                    margin-bottom: 3%;
+                    text-transform: uppercase;
                 }
             }
 
@@ -47,7 +63,7 @@
                 .radio-label {
                     @include flex-center;
                     text-transform: uppercase;
-                    padding: 5% 0;
+                    padding: 5% 0 2%;
                     height: 100%;
                     line-height: 1;
                     border-radius: 10px;
@@ -56,10 +72,16 @@
                     transition: all 0.3s ease;
                     text-align: center;
                     border: none;
+                    display: block;
 
                     &:hover {
                         background: $title-color;
                         color: white;
+                    }
+
+                    i {
+                        display: block;
+                        line-height: 2;
                     }
                 }
 
@@ -132,12 +154,20 @@
                 &.guest-number {
                     display: flex;
                     gap: 2%;
+
                     .label {
                         display: block;
                         @include flex-center;
+                        flex-direction: column;
                         width: 35%;
                         text-transform: uppercase;
+
+                        i {
+                            display: block;
+                            line-height: 1.5;
+                        }
                     }
+
                     input {
                         width: 63%;
                     }
@@ -146,8 +176,8 @@
 
             .submit-btn {
                 width: 28%;
-                padding: 2%;
-                line-height: 1;
+                padding: 2% 0 1%;
+                line-height: 1.3;
                 background: $title-color;
                 color: white;
                 border: none;
@@ -160,12 +190,12 @@
                 margin: 1% 0 6%;
                 font-family: $font-gilroy;
             }
-    
+
             .submit-btn:hover {
                 background: rgb(41, 51, 36);
                 opacity: 0.9;
             }
-    
+
             .submit-btn:active {
                 transform: scale(0.98);
             }
@@ -179,25 +209,34 @@
                     .title {
                         font-size: calc((39 / 500) * 100vw);
                     }
-    
+
+                    .en-title {
+                        font-size: calc((18 / 500) * 100vw);
+                    }
+
                     .subtitle {
                         font-size: calc((12 / 500) * 100vw);
                     }
+
+                    .en-subtitle {
+                        font-size: calc((11 / 500) * 100vw);
+                    }
                 }
-    
+
                 .form-group {
                     font-size: calc((10 / 500) * 100vw);
+
                     input[type="text"],
                     input[type="number"],
                     textarea {
                         font-size: calc((12 / 500) * 100vw);
                     }
-    
+
                     .subtitle {
                         font-size: calc((12 / 500) * 100vw);
                     }
                 }
-    
+
                 .submit-btn {
                     font-size: calc((10 / 500) * 100vw);
                 }

@@ -7,9 +7,9 @@
     .content {
         width: 100%;
         aspect-ratio: 500 / 730;
-        // background:
-        //     url('../../assets/images/IMG_5293.GIF') no-repeat 52% 63% / 164%,
-        //     url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/cuong-trang/hero.webp') no-repeat center / cover;
+        background:
+            url('../../assets/images/IMG_6205.GIF') no-repeat 50% 63% / 150%,
+            url('../../assets/images/hero.jpg') no-repeat center / cover;
         background-color: $title-color;
         display: flex;
         justify-content: space-between;
@@ -27,14 +27,30 @@
             }
         }
 
-        // .couple-name {
-        //     margin-bottom: 70%;
-        //     img {
-        //         max-width: 400px;
-        //         width: 100%;
-        //         height: auto;
-        //     }
-        // }
+        .couple-name {
+            margin-bottom: 60%;
+            font-family: $font-DK-Cool-Crayonr;
+            font-size: 52px;
+            color: #f5eddaff;
+            transform: rotate(-5deg);
+
+
+            span {
+                display: block;
+
+                &.husband {
+                    text-align: left;
+                    position: relative;
+                    left: -10%;
+                    margin-bottom: 5%;
+                }
+
+                &.wife {
+                    text-align: right;
+                }
+            }
+        }
+
         .date {
             color: white;
             margin-bottom: 8%;
@@ -67,9 +83,7 @@
             }
 
             .couple-name {
-                img {
-                    max-width: calc((400 / 500) * 100vw);
-                }
+                font-size: calc((52 / 500) * 100vw);
             }
 
             .date {

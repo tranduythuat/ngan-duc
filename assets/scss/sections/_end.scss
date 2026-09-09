@@ -27,9 +27,22 @@
                 color: $title-color;
             }
 
+            .en-title {
+                font-size: 18px;
+                color: $text-color;
+                margin-bottom: 5%;
+            }
+
             .sub_text {
-                margin: 2% 0 5%;
-                letter-spacing: 1.4px;
+                letter-spacing: 1.2px;
+                // font-family: $font-gotham;
+                color: $text-color;
+                font-size: 12px;
+            }
+
+            .en-sub_text {
+                margin: 1% 0 5%;
+                letter-spacing: 1.2px;
                 // font-family: $font-gotham;
                 color: $text-color;
                 font-size: 12px;
@@ -83,9 +96,14 @@
                     // letter-spacing: calc((3 / 500) * 100vw);
                 }
 
-                .sub_text {
+                .en-title {
+                    font-size: calc((18 / 500) * 100vw);
+                }
+
+                .sub_text,
+                .en-sub_text {
                     font-size: calc((12 / 500) * 100vw);
-                    // letter-spacing: calc((1.4 / 500) * 100vw);
+                    letter-spacing: calc((1.2 / 500) * 100vw);
                 }
 
                 .countdown-box {
