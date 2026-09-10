@@ -277,7 +277,7 @@ section {
 .hero .content {
   width: 100%;
   aspect-ratio: 500/730;
-  background: url("../../assets/images/IMG_6205.GIF") no-repeat 50% 63%/150%, url("../../assets/images/hero.jpg") no-repeat center/cover;
+  background: url("../../assets/images/IMG_6205.GIF") no-repeat 50% 63%/150%, url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/ngan-duc/hero.jpg") no-repeat center/cover;
   background-color: #646531;
   display: flex;
   justify-content: space-between;
@@ -482,7 +482,7 @@ section {
 .timeline .content {
   width: 100%;
   aspect-ratio: 500/980;
-  background: url("../../assets/images/line_tl_bg.png") no-repeat 50% 0%/70%, linear-gradient(to bottom, #859186, #859186, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.126), rgba(0, 0, 0, 0.126), rgba(0, 0, 0, 0.101)), url("../../assets/images/timeline_bg.jpg") no-repeat 100% 100%/100%;
+  background: url("../../assets/images/line_tl_bg.png") no-repeat 50% 0%/70%, linear-gradient(to bottom, #859186, #859186, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.126), rgba(0, 0, 0, 0.126), rgba(0, 0, 0, 0.101)), url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/ngan-duc/timeline_bg.webp") no-repeat 100% 100%/100%;
   display: flex;
   justify-content: start;
   flex-direction: column;
