@@ -23,7 +23,7 @@
             font-family: $font-DK-Cool-Crayonr;
             font-size: 32px;
             font-weight: 300;
-            margin-top: 20%;
+            margin-top: 19%;
         }
 
         .wax {
@@ -40,7 +40,7 @@
         width: 100%;
 
         .item {
-            margin-bottom: 8%;
+            margin-bottom: 10%;
 
             .icon {
                 @include flex-center;
@@ -78,10 +78,10 @@
     }
 
     .dresscode {
-        margin-top: 14%;
+        margin-top: 10%;
 
         .title {
-            margin-bottom: 2%;
+            margin-bottom: 0%;
         }
 
         .subtext {

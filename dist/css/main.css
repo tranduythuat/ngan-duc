@@ -494,7 +494,7 @@ section {
   font-family: "1FTV-VIP-DK-Cool-Crayon", sans-serif;
   font-size: 32px;
   font-weight: 300;
-  margin-top: 20%;
+  margin-top: 19%;
 }
 .timeline .content .wax {
   position: absolute;
@@ -508,7 +508,7 @@ section {
   width: 100%;
 }
 .timeline .items .item {
-  margin-bottom: 8%;
+  margin-bottom: 10%;
 }
 .timeline .items .item .icon {
   display: flex;
@@ -535,10 +535,10 @@ section {
   max-width: 38px;
 }
 .timeline .dresscode {
-  margin-top: 14%;
+  margin-top: 10%;
 }
 .timeline .dresscode .title {
-  margin-bottom: 2%;
+  margin-bottom: 0%;
 }
 .timeline .dresscode .subtext {
   font-size: 14px;
@@ -665,11 +665,7 @@ section {
 .pictures .content {
   width: 100%;
   position: relative;
-  aspect-ratio: 500/710;
-}
-.pictures .content .picture {
-  position: absolute;
-  width: 100%;
+  aspect-ratio: 500/900;
 }
 .pictures .content .flower {
   max-width: 80px;
@@ -679,60 +675,62 @@ section {
 }
 .pictures .content .flower_left {
   top: 27%;
-  left: 10%;
+  left: 4%;
   z-index: 8;
 }
 .pictures .content .flower_right {
-  top: 36%;
-  left: 43%;
+  top: 31%;
+  left: 41%;
   z-index: 5;
+  transform: scaleX(-1);
 }
 .pictures .content .flower_pic04 {
   max-width: 91px;
   width: 100%;
   height: auto;
   position: absolute;
-  bottom: 3%;
-  left: 41%;
+  bottom: 2%;
+  left: 43%;
   z-index: 7;
 }
+.pictures .content .picture {
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 5/7;
+  max-width: 190px;
+}
 .pictures .content .picture01 {
-  max-width: 198px;
-  aspect-ratio: 198/262;
-  background: url("../../assets/images/picture01.png") no-repeat center/cover;
+  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/ngan-duc/pictures/1.webp") no-repeat center/cover;
   top: 12%;
-  left: 15%;
+  left: 12%;
+  transform: rotate(3deg);
 }
 .pictures .content .picture02 {
-  max-width: 217px;
-  aspect-ratio: 217/274;
-  background: url("../../assets/images/picture02.png") no-repeat center/cover;
-  top: 20%;
-  left: 46%;
+  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/ngan-duc/pictures/2.webp") no-repeat center/cover;
+  top: 14%;
+  left: 50%;
   z-index: 4;
+  transform: rotate(-5deg);
 }
 .pictures .content .picture03 {
-  max-width: 188px;
-  aspect-ratio: 188/256;
-  background: url("../../assets/images/picture03.png") no-repeat center/cover;
+  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/ngan-duc/pictures/3.webp") no-repeat center/cover;
   top: 41%;
   left: 30%;
   z-index: 6;
+  transform: rotate(1deg);
 }
 .pictures .content .picture04 {
-  max-width: 234px;
-  aspect-ratio: 234/284;
-  background: url("../../assets/images/picture04.png") no-repeat center/cover;
-  top: 64%;
-  left: 8%;
+  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/ngan-duc/pictures/4.webp") no-repeat center/cover;
+  top: 69%;
+  left: 10%;
   z-index: 7;
+  transform: rotate(-7deg);
 }
 .pictures .content .picture05 {
-  max-width: 249px;
-  aspect-ratio: 249/291;
-  background: url("../../assets/images/picture05.png") no-repeat center/cover;
-  top: 61%;
-  left: 45%;
+  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/ngan-duc/pictures/5.webp") no-repeat center/cover;
+  top: 67%;
+  left: 53%;
+  transform: rotate(6deg);
 }
 @media (max-width: 500px) {
   .pictures .content .flower {
@@ -792,13 +790,22 @@ section {
   font-size: 12px;
   line-height: 1.5;
   color: #503b28;
+  text-transform: uppercase;
+  margin-bottom: 2%;
+}
+.rsvp .content .rsvp-form .header .subtitle .bold {
+  font-weight: 600;
 }
 .rsvp .content .rsvp-form .header .en-subtitle {
   display: block;
-  font-size: 11px;
+  font-size: 10px;
   color: #503b28;
   margin-bottom: 3%;
   text-transform: uppercase;
+  line-height: 1.5;
+}
+.rsvp .content .rsvp-form .header .en-subtitle .bold {
+  font-weight: 600;
 }
 .rsvp .content .rsvp-form .button-group {
   display: grid;
@@ -949,7 +956,7 @@ section {
     font-size: 2.4vw;
   }
   .rsvp .content .rsvp-form .header .en-subtitle {
-    font-size: 2.2vw;
+    font-size: 2vw;
   }
   .rsvp .content .rsvp-form .form-group {
     font-size: 2vw;

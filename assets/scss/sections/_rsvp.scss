@@ -33,14 +33,25 @@
                     font-size: 12px;
                     line-height: 1.5;
                     color: #503b28ff;
+                    text-transform: uppercase;
+                    margin-bottom: 2%;
+
+                    .bold {
+                        font-weight: 600;
+                    }
                 }
 
                 .en-subtitle {
                     display: block;
-                    font-size: 11px;
+                    font-size: 10px;
                     color: #503b28ff;
                     margin-bottom: 3%;
                     text-transform: uppercase;
+                    line-height: 1.5;
+
+                    .bold {
+                        font-weight: 600;
+                    }
                 }
             }
 
@@ -219,7 +230,7 @@
                     }
 
                     .en-subtitle {
-                        font-size: calc((11 / 500) * 100vw);
+                        font-size: calc((10 / 500) * 100vw);
                     }
                 }
 
