@@ -11,8 +11,6 @@
         position: relative;
         aspect-ratio: 500 / 900;
 
-
-
         .flower {
             max-width: 80px;
             width: 100%;
@@ -99,34 +97,6 @@
 
             .picture {
                 max-width: calc((190 / 500) * 100vw);
-            }
-
-            .picture01 {
-                max-width: calc((198 / 500) * 100vw);
-
-                .flower {
-                    max-width: calc((80 / 500) * 100vw);
-                }
-            }
-
-            .picture02 {
-                max-width: calc((217 / 500) * 100vw);
-            }
-
-            .picture03 {
-                max-width: calc((188 / 500) * 100vw);
-            }
-
-            .picture04 {
-                max-width: calc((234 / 500) * 100vw);
-
-                .flower_pic04 {
-                    max-width: calc((91 / 500) * 100vw);
-                }
-            }
-
-            .picture05 {
-                max-width: calc((249 / 500) * 100vw);
             }
         }
     }
