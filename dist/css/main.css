@@ -776,7 +776,7 @@ section {
   margin-bottom: 2%;
 }
 .rsvp .content .rsvp-form .header .subtitle .bold {
-  font-weight: 600;
+  font-weight: 900;
 }
 .rsvp .content .rsvp-form .header .en-subtitle {
   display: block;
@@ -787,7 +787,7 @@ section {
   line-height: 1.5;
 }
 .rsvp .content .rsvp-form .header .en-subtitle .bold {
-  font-weight: 600;
+  font-weight: 900;
 }
 .rsvp .content .rsvp-form .button-group {
   display: grid;
