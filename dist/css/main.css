@@ -739,6 +739,9 @@ section {
   .pictures .content .flower_pic04 {
     max-width: 18.2vw;
   }
+  .pictures .content .picture {
+    max-width: 38vw;
+  }
   .pictures .content .picture01 {
     max-width: 39.6vw;
   }
