@@ -7,6 +7,13 @@
     .content {
         width: 100%;
 
+        .text {
+            letter-spacing: 1px;
+            color: $text-color;
+            font-size: 12px;
+            margin-bottom: 5%;
+        }
+
         .countdown {
             width: 100%;
             @include flex-center;
@@ -90,6 +97,11 @@
         }
 
         @media (max-width: 500px) {
+            .text {
+                letter-spacing: calc((1 / 500) * 100vw);
+                font-size: calc((12 / 500) * 100vw);
+            }
+
             .countdown {
                 .title {
                     font-size: calc((40 / 500) * 100vw);

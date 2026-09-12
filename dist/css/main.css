@@ -997,6 +997,12 @@ section {
 .end .content {
   width: 100%;
 }
+.end .content .text {
+  letter-spacing: 1px;
+  color: #503b28;
+  font-size: 12px;
+  margin-bottom: 5%;
+}
 .end .content .countdown {
   width: 100%;
   display: flex;
@@ -1070,6 +1076,10 @@ section {
   position: relative;
 }
 @media (max-width: 500px) {
+  .end .content .text {
+    letter-spacing: 0.2vw;
+    font-size: 2.4vw;
+  }
   .end .content .countdown .title {
     font-size: 8vw;
   }
