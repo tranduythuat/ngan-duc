@@ -698,6 +698,11 @@ section {
   width: 100%;
   aspect-ratio: 5/7;
   max-width: 190px;
+  border-top: 10px solid #efefe6;
+  border-left: 10px solid #efefe6;
+  border-right: 10px solid #efefe6;
+  border-bottom: 40px solid #efefe6;
+  box-shadow: 5px 5px 8px 0px rgba(0, 0, 0, 0.2);
 }
 .pictures .content .picture01 {
   background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/ngan-duc/pictures/1.webp") no-repeat center/cover;
