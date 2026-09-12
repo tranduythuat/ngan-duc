@@ -415,6 +415,7 @@ function gsapRollInLeft(selector) {
       duration: 1.2,
       ease: "back.out(1.2)",
       transformOrigin: "center center",
+      clearProps: "transform",
       scrollTrigger: {
         trigger: el,
         start: "top 85%",
@@ -434,6 +435,7 @@ function gsapRollInRight(selector) {
       duration: 2,
       ease: "back.out(1.2)",
       transformOrigin: "center center",
+      clearProps: "transform",
       scrollTrigger: {
         trigger: el,
         start: "top 85%",

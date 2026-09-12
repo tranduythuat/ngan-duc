@@ -9,6 +9,8 @@
   const qsa = (selector, parent = document) =>
     parent.querySelectorAll(selector);
 
+  let hasInitializedMainContent = false;
+
   /* ======================================================
        SWIPER
     ====================================================== */
@@ -100,10 +102,32 @@
   function initPage() {
     const tl = gsap.timeline({ paused: true });
     const audio = document.querySelector("#audio");
+    const openCard = document.getElementById("open-card");
+    const params = new URLSearchParams(window.location.search);
+    const isCardOpened = params.get("opened") === "1";
+
+    function markCardOpened() {
+      const url = new URL(window.location.href);
+      url.searchParams.set("opened", 1);
+      window.history.replaceState({}, "", url);
+    }
+
+    if (isCardOpened) {
+      gsap.set(".letter-section", { display: "none", opacity: 0 });
+      gsap.set(".container", { display: "block", opacity: 1 });
+      requestAnimationFrame(initMainContent);
+      return;
+    }
+
+    if (!openCard) {
+      gsap.set(".container", { display: "block", opacity: 1 });
+      requestAnimationFrame(initMainContent);
+      return;
+    }
 
     tl.to(".letter-section", {
       opacity: 0,
-      duration: 0.8
+      duration: 2
     })
       .set(".letter-section", { display: "none" })
       .set(".container .content", { opacity: 0 })
@@ -119,14 +143,17 @@
           // gsap.globalTimeline.clear();
 
           // 💥 Re-init animation cho container
-          initAnimations();
+          initMainContent();
+          // initMusic();
+
           // initDresscodeAnimation();
           // initTimeline();
-          ScrollTrigger.refresh();
         }
       });
 
-    document.getElementById("open-card").addEventListener("click", (e) => {
+    openCard.addEventListener("click", () => {
+      markCardOpened();
+
       if (audio && audio.paused) {
         audio.play().catch(err => {
           console.log("Autoplay blocked:", err);
@@ -134,6 +161,21 @@
       }
       tl.play();
     });
+  }
+
+  function initMainContent() {
+    if (hasInitializedMainContent) return;
+    hasInitializedMainContent = true;
+
+    initAnimations();
+    initSwiper();
+    initMusic();
+    // initDresscodeAnimation();
+    initTimeline();
+    // initFAQ();
+    initRSVP();
+    startCountdown(new Date("2026-12-12T18:00:00"));
+    ScrollTrigger.refresh();
   }
 
   function initLetterAnimation() {
@@ -677,16 +719,8 @@
 
   function init() {
     gsap.registerPlugin(ScrollTrigger);
-    // initPage();
+    initPage();
     // initLetterAnimation();
-    initAnimations();
-    initSwiper();
-    initMusic();
-    initDresscodeAnimation();
-    initTimeline();
-    initFAQ();
-    initRSVP();
-    startCountdown(new Date("2026-12-12T18:00:00"));
   }
 
   document.addEventListener("DOMContentLoaded", init);

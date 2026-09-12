@@ -90,6 +90,8 @@ section {
   color: #503b28;
   font-family: "Lora", sans-serif;
   font-size: 11px;
+  display: none;
+  opacity: 0;
 }
 
 /* music */
@@ -271,6 +273,34 @@ section {
     transform: translateX(0) rotate(0deg);
   }
 }
+.letter-section {
+  width: 100%;
+  max-width: 500px;
+}
+.letter-section .content {
+  width: 100%;
+  aspect-ratio: 500/891;
+  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/ngan-duc/letter.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: column;
+  color: #564e47;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.439);
+  position: relative;
+  cursor: pointer;
+  perspective: 1000px;
+  padding-bottom: 15%;
+}
+@media (max-width: 500px) {
+  .letter-section .content .subtext {
+    font-size: 4.2vw;
+  }
+}
+
 .hero {
   width: 100%;
 }
