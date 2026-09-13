@@ -16,7 +16,7 @@
         justify-content: end;
         align-items: center;
         flex-direction: column;
-        color: #564e47ff;
+        color: $text-color;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.439);
         position: relative;
         cursor: pointer;
@@ -27,6 +27,7 @@
             font-family: $font-lora;
             font-size: 16px;
             text-align: center;
+            text-transform: uppercase;
         }
     }
 
