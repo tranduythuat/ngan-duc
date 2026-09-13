@@ -293,11 +293,16 @@ section {
   position: relative;
   cursor: pointer;
   perspective: 1000px;
-  padding-bottom: 15%;
+  padding-bottom: 23%;
+}
+.letter-section .content .subtext {
+  font-family: "Lora", sans-serif;
+  font-size: 16px;
+  text-align: center;
 }
 @media (max-width: 500px) {
   .letter-section .content .subtext {
-    font-size: 4.2vw;
+    font-size: 3.2vw;
   }
 }
 
@@ -442,6 +447,10 @@ section {
   font-family: "1FTV-VIP-DK-Cool-Crayon", sans-serif;
   color: #646531;
   margin: 1% 0;
+}
+.invite .content .hall {
+  font-size: 15px;
+  color: black;
 }
 .invite .content .address {
   color: #503b28;
@@ -642,11 +651,11 @@ section {
   color: #646531;
   font-size: 41px;
   font-weight: 300;
-  margin: 5% 0 7%;
+  margin: 5% 0 0%;
 }
 .album .content .swiper {
   width: 100%;
-  aspect-ratio: 2/3;
+  aspect-ratio: 2/1.5;
   margin: 0 auto;
 }
 .album .content .swiper .swiper-slide {
