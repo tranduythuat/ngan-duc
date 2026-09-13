@@ -29,12 +29,21 @@
             text-align: center;
             text-transform: uppercase;
         }
+
+        .en-subtext {
+            font-size: 11px;
+            text-transform: uppercase;
+        }
     }
 
     @media (max-width: 500px) {
         .content {
             .subtext {
                 font-size: calc((16 / 500) * 100vw);
+            }
+
+            .en-subtext {
+                font-size: calc((11 / 500) * 100vw);
             }
         }
     }

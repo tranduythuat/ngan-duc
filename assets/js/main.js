@@ -567,6 +567,9 @@
       name,
       confirm,
       guest_number,
+      phone,
+      address,
+      food,
       wish,
     } = data;
 
@@ -609,7 +612,7 @@
       didOpen: () => Swal.showLoading(),
     });
 
-    const sheetURL = "https://script.google.com/macros/s/AKfycbxgw1XAtKhUNH7CSybnmEqaxnG5MC3KLIW6EKY360rcguiBOJPFFqt3wnw7TTsh6IMp/exec?sheet=confirm";
+    const sheetURL = "https://script.google.com/macros/s/AKfycbxVhxt9nyLTLImzLFYQo9dvHiIDDqRWEgr8Ppr8Tiylit41idZvA0TvkE2P_Xtgp5EyBg/exec?sheet=confirm";
 
     try {
       const res = await fetch(sheetURL, {
@@ -619,6 +622,9 @@
           name,
           confirm,
           guest_number,
+          phone,
+          address,
+          food,
           wish,
         }),
       });

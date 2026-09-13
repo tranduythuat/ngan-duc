@@ -301,9 +301,16 @@ section {
   text-align: center;
   text-transform: uppercase;
 }
+.letter-section .content .en-subtext {
+  font-size: 11px;
+  text-transform: uppercase;
+}
 @media (max-width: 500px) {
   .letter-section .content .subtext {
     font-size: 3.2vw;
+  }
+  .letter-section .content .en-subtext {
+    font-size: 2.2vw;
   }
 }
 
