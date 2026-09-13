@@ -455,6 +455,10 @@ section {
 .invite .content .address {
   color: #503b28;
 }
+.invite .content .en-address {
+  color: #503b28;
+  font-size: 11px;
+}
 .invite .content .map-img {
   margin: -5% auto;
 }
@@ -1010,6 +1014,11 @@ section {
   letter-spacing: 1px;
   color: #503b28;
   font-size: 12px;
+  margin-bottom: 2%;
+}
+.end .content .en-text {
+  display: inline-block;
+  color: #503b28;
   margin-bottom: 5%;
 }
 .end .content .countdown {
