@@ -14,6 +14,8 @@
   let isUserInteracting = false;
   let virtualY = window.scrollY;
 
+  let isSubmitting = false;
+
   /* ======================================================
        SWIPER
     ====================================================== */
@@ -600,31 +602,16 @@
 
   async function handleFormSubmit(e, lang = "vi") {
     e.preventDefault();
+
+    // Prevent duplicate submit
+    if (isSubmitting) { return; }
+
     const form = document.forms["rsvpForm"];
 
-    // form.addEventListener("submit", (e) => {
-    //   e.preventDefault();
-
-    //   const data = new FormData(form);
-    //   console.log(Object.fromEntries(data));
-    // });
     if (!form) {
+      console.error("RSVP form not found");
       return;
     }
-
-    // const form = e.target;
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-
-    const {
-      name,
-      confirm,
-      guest_number,
-      phone,
-      address,
-      food,
-      wish,
-    } = data;
 
     // =========================
     // i18n Messages
@@ -654,6 +641,32 @@
 
     const t = messages[lang] || messages.vi;
 
+    // Lock submit
+    isSubmitting = true;
+
+    // Disable submit button
+    const submitButton = form.querySelector('button[type="submit"], input[type="submit"]');
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.dataset.originalText = submitButton.textContent;
+      if (submitButton.tagName === "BUTTON") {
+        submitButton.textContent = t.sendingTitle;
+      }
+    }
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    const {
+      name,
+      confirm,
+      guest_number,
+      phone,
+      address,
+      food,
+      wish,
+    } = data;
+
     // =========================
     // Loading popup
     // =========================
@@ -662,44 +675,44 @@
       text: t.sendingText,
       icon: "info",
       allowOutsideClick: false,
+      allowEscapeKey: false,
+      showConfirmButton: false,
       didOpen: () => Swal.showLoading(),
     });
 
     const sheetURL = "https://script.google.com/macros/s/AKfycbxVhxt9nyLTLImzLFYQo9dvHiIDDqRWEgr8Ppr8Tiylit41idZvA0TvkE2P_Xtgp5EyBg/exec?sheet=confirm";
 
+    const controller = new AbortController();
+
+    const timeout = setTimeout(() => { controller.abort(); }, 15000);
+
     try {
+      const body = new URLSearchParams({ name, confirm, guest_number, phone, address, food, wish, });
       const res = await fetch(sheetURL, {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({
-          name,
-          confirm,
-          guest_number,
-          phone,
-          address,
-          food,
-          wish,
-        }),
+        headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8", },
+        body,
+        signal: controller.signal,
       });
+      clearTimeout(timeout);
 
       // Nếu server lỗi HTTP
       if (!res.ok) {
-        throw new Error("Server response not OK");
+        throw new Error(`HTTP ${res.status}`);
       }
 
-      const result = await res.json().catch(() => null);
-
-      if (!result) {
-        Swal.fire({
-          title: t.errorTitle,
-          text: t.errorServer,
-          icon: "error",
-          confirmButtonText: t.errorRetry,
-          confirmButtonColor: "#3c7fc2",
-        });
-        return;
+      let result;
+      try {
+        result = await res.json();
+      } catch (error) {
+        throw new Error("Invalid server response");
       }
 
+      if (!result || result.success === false) {
+        throw new Error(t.errorServer);
+      }
+
+      // Success
       form.reset();
 
       Swal.fire({
@@ -711,14 +724,29 @@
       });
     } catch (error) {
       console.error("Error:", error);
+      clearTimeout(timeout);
+      console.error("RSVP submit error:", error);
 
-      Swal.fire({
+      let errorMessage = t.errorServer;
+      if (error.name === "AbortError") {
+        errorMessage = t.errorTimeout;
+      }
+
+      await Swal.fire({
         title: t.errorTitle,
         text: error.message || t.errorServer,
         icon: "error",
         confirmButtonText: t.errorRetry,
         confirmButtonColor: "#3c7fc2",
       });
+    } finally {
+      isSubmitting = false;
+      if (submitButton) {
+        submitButton.disabled = false;
+        if (submitButton.tagName === "BUTTON") {
+          submitButton.textContent = submitButton.dataset.originalText || "Submit";
+        }
+      }
     }
   }
 
