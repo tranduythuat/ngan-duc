@@ -11,6 +11,9 @@
 
   let hasInitializedMainContent = false;
 
+  let isUserInteracting = false;
+  let virtualY = window.scrollY;
+
   /* ======================================================
        SWIPER
     ====================================================== */
@@ -171,6 +174,7 @@
     if (hasInitializedMainContent) return;
     hasInitializedMainContent = true;
 
+    initScrollPage();
     initAnimations();
     initSwiper();
     initMusic();
@@ -441,6 +445,55 @@
         );
       }
     });
+  }
+
+  function initScrollPage() {
+    const playerBtn = document.querySelector("#player-btn");
+
+    // detect user stop
+    ["wheel", "touchstart", "mousedown", "keydown"].forEach(event => {
+      window.addEventListener(event, (e) => {
+
+        if (playerBtn && (playerBtn === e.target || playerBtn.contains(e.target))) return;
+
+        isUserInteracting = true;
+      }, { passive: true });
+    });
+
+    const step = () => {
+      if (isUserInteracting) return;
+
+      const max = Math.max(document.body.scrollHeight - window.innerHeight, 0);
+      const distance = max - virtualY;
+
+      // snap cuối → tránh giật
+      if (distance < 1) {
+        window.scrollTo(0, max);
+        return;
+      }
+
+      // easing mượt
+      const speed = Math.min(distance * 0.01, 0.6);
+
+      virtualY += speed;
+      window.scrollTo(0, virtualY);
+
+      requestAnimationFrame(step);
+    };
+
+    const startAutoScroll = () => {
+      virtualY = window.scrollY;
+      setTimeout(() => {
+        requestAnimationFrame(step);
+      }, 300);
+    };
+
+    if (document.readyState === "complete") {
+      startAutoScroll();
+      return;
+    }
+
+    window.addEventListener("load", startAutoScroll, { once: true });
   }
 
   /* ======================================================

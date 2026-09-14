@@ -59,12 +59,12 @@
     <!-- invite -->
     <section class="invite">
       <div class="content" data-animate="fade-in">
-        <div class="welcome" data-animate="fade-in">Welcome to the wedding of</div>
+        <div class="welcome" data-animate="fade-in" data-animate-scroll-start="top 95%">Welcome to the wedding of</div>
         <!-- <div class="couple-intro">
           <div class="img-box bride"></div>
           <div class="img-box groom"></div>
         </div> -->
-        <div class="couple-name" data-animate="fade-in">
+        <div class="couple-name" data-animate="fade-in" data-animate-scroll-start="top 95%">
           Trung Đức & Mỹ Ngân
         </div>
         <div class="couple-image">
@@ -74,9 +74,10 @@
         <div class="time" data-animate="fade-in">12.12.2026 | 18:00</div>
         <div class="label" data-animate="fade-in">Tại trung tâm sự kiện</div>
         <div class="location" data-animate="fade-in">WHITE PALACE </div>
-        <div class="hall">Sảnh A</div>
+        <div class="hall" data-animate="fade-in">Sảnh A</div>
         <div class="address" data-animate="fade-in">588 Đ. Phạm Văn Đồng, khu phố 3, Hiệp Bình, Hồ Chí Minh</div>
-        <i class="en-address">/Hall A - 588 Pham Van Dong Street, Quarter 3, Hiep Binh, Ho Chi Minh City/</i>
+        <i class="en-address" data-animate="fade-in">/Hall A - 588 Pham Van Dong Street, Quarter 3, Hiep Binh, Ho Chi
+          Minh City/</i>
         <div class="map-img">
           <img src="assets/images/map.png" data-animate="fade-in" alt="">
         </div>
@@ -374,6 +375,50 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="assets/js/gsap-animations.js"></script>
   <script src="assets/js/main.js"></script>
+
+  <!-- <script>
+    let isUserInteracting = false;
+    let virtualY = window.scrollY;
+
+    const playerBtn = document.querySelector("#player-btn");
+
+    // detect user stop
+    ["wheel", "touchstart", "mousedown", "keydown"].forEach(event => {
+      window.addEventListener(event, (e) => {
+
+        if (playerBtn && (playerBtn === e.target || playerBtn.contains(e.target))) return;
+
+        isUserInteracting = true;
+      }, { passive: true });
+    });
+
+    const step = () => {
+      if (isUserInteracting) return;
+
+      const max = document.body.scrollHeight - window.innerHeight;
+      const distance = max - virtualY;
+
+      // snap cuối → tránh giật
+      if (distance < 1) {
+        window.scrollTo(0, max);
+        return;
+      }
+
+      // easing mượt
+      const speed = Math.min(distance * 0.01, 0.6);
+
+      virtualY += speed;
+      window.scrollTo(0, virtualY);
+
+      requestAnimationFrame(step);
+    };
+
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        requestAnimationFrame(step);
+      }, 300);
+    });
+  </script> -->
 </body>
 
 </html>
