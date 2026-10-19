@@ -305,12 +305,35 @@ section {
   font-size: 11px;
   text-transform: uppercase;
 }
+.letter-section .content .arrow {
+  position: absolute;
+  bottom: 30%;
+  left: 55%;
+  width: 80px;
+  height: auto;
+  display: block;
+  animation: arrowPulse 1.5s ease-in-out infinite;
+  transform-origin: center;
+}
+@keyframes arrowPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 0.9;
+  }
+}
 @media (max-width: 500px) {
   .letter-section .content .subtext {
     font-size: 3.2vw;
   }
   .letter-section .content .en-subtext {
     font-size: 2.2vw;
+  }
+  .letter-section .content .arrow {
+    width: 16vw;
   }
 }
 
@@ -407,24 +430,20 @@ section {
   color: #503b28;
   margin-bottom: 2%;
 }
-.invite .content .couple-intro {
+.invite .content .parents-info {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10%;
-  margin: 10% 0;
+  margin-bottom: 8%;
 }
-.invite .content .couple-intro .img-box {
-  max-width: 180px;
-  width: 100%;
-  aspect-ratio: 5/8;
-  border-radius: 5px;
+.invite .content .parents-info .label {
+  font-style: italic;
+  margin-bottom: 4%;
 }
-.invite .content .couple-intro .img-box.bride {
-  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/ngan-duc/bride.webp") no-repeat 50% 50%/cover;
-}
-.invite .content .couple-intro .img-box.groom {
-  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/ngan-duc/husband.webp") no-repeat 50% 50%/cover;
+.invite .content .parents-info .name {
+  font-weight: bold;
+  line-height: 1.5;
 }
 .invite .content .couple-name {
   font-family: "1FTV-VIP-DK-Cool-Crayon", sans-serif;

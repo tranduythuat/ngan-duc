@@ -17,26 +17,44 @@
             margin-bottom: 2%;
         }
 
-        .couple-intro {
+        // .couple-intro {
+        //     display: flex;
+        //     justify-content: center;
+        //     align-items: center;
+        //     gap: 10%;
+        //     margin: 10% 0;
+
+        //     .img-box {
+        //         max-width: 180px;
+        //         width: 100%;
+        //         aspect-ratio: 5 / 8;
+        //         border-radius: 5px;
+
+        //         &.bride {
+        //             background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/ngan-duc/bride.webp') no-repeat 50% 50% / cover;
+        //         }
+
+        //         &.groom {
+        //             background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/ngan-duc/husband.webp') no-repeat 50% 50% / cover;
+        //         }
+        //     }
+        // }
+
+        .parents-info {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 10%;
-            margin: 10% 0;
+            margin-bottom: 8%;
 
-            .img-box {
-                max-width: 180px;
-                width: 100%;
-                aspect-ratio: 5 / 8;
-                border-radius: 5px;
+            .label {
+                font-style: italic;
+                margin-bottom: 4%;
+            }
 
-                &.bride {
-                    background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/ngan-duc/bride.webp') no-repeat 50% 50% / cover;
-                }
-
-                &.groom {
-                    background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/ngan-duc/husband.webp') no-repeat 50% 50% / cover;
-                }
+            .name {
+                font-weight: bold;
+                line-height: 1.5;
             }
         }
 

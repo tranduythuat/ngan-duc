@@ -34,6 +34,32 @@
             font-size: 11px;
             text-transform: uppercase;
         }
+
+        .arrow {
+            position: absolute;
+            bottom: 30%;
+            left: 55%;
+            width: 80px;
+            height: auto;
+            display: block;
+            animation: arrowPulse 1.5s ease-in-out infinite;
+            transform-origin: center;
+        }
+
+    }
+
+    @keyframes arrowPulse {
+
+        0%,
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        50% {
+            transform: scale(1.12);
+            opacity: 0.9;
+        }
     }
 
     @media (max-width: 500px) {
@@ -44,6 +70,10 @@
 
             .en-subtext {
                 font-size: calc((11 / 500) * 100vw);
+            }
+
+            .arrow {
+                width: calc((80 / 500) * 100vw);
             }
         }
     }
